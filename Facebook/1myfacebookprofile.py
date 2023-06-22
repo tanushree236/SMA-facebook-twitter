@@ -1,0 +1,7 @@
+import json
+import facebook
+
+token = "EABTDSezqk1sBAJa2WFhINhB11tAXzZBD1r9RnUoQnIxmBxluGjacZBZAKSY1pvxmpXbaAPpEAz2HxiW3QaU5RxNmjLhb9WcJZCTvZC41SLdP4C1ZBmOYanReUamR2JZCiqZBpFo82qlkalbdVnrlwz7z9zJhE7J6XRbwHOZCd461DTEqgtQLjcGMfz0HT5h4hNQLZA5oxnAveTpWAhzMMZAKITkNwqDbRS8mS1JV8EBJtRuS4ix2LgPfhUP"
+graph = facebook.GraphAPI(token)
+profile = graph.get_object("me", fields='name,location{general_info,location}')
+print(json.dumps(profile, indent=4))
